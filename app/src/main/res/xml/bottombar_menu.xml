@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab1"
+        title="通知通告"
+        icon="@mipmap/ic_main_relam"
+        barColorWhenSelected="#2A3137"
+        />
+    <tab
+        id="@+id/tab2"
+        title="任务办理"
+        icon="@mipmap/ic_main_task"
+        barColorWhenSelected="#2A3137"
+        />
+    <tab
+        id="@+id/tab3"
+        title="个人中心"
+        icon="@mipmap/ic_main_my"
+        barColorWhenSelected="#2A3137"
+        />
+</tabs>

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".task.TaskAddActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/white">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50sp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="15sp"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:text="任务标题"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/et_title"
+                    android:layout_width="0sp"
+                    android:layout_height="50sp"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:background="@null"
+                    android:hint="请输入标题"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black_text"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/divide_line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/white"
+                    android:weightSum="7">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="50sp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="15sp"
+                        android:layout_weight="2"
+                        android:gravity="center_vertical"
+                        android:text="人员选取"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_userids"
+                        android:layout_width="0dp"
+                        android:layout_height="50sp"
+                        android:layout_gravity="center"
+                        android:layout_weight="4"
+                        android:text="请选择"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/black_text"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@mipmap/ic_arrow_drop_down_grey600_24dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/divide_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/white"
+                android:weightSum="7">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50sp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="15sp"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:text="是否紧急"
+                    android:textSize="14sp" />
+                <RadioGroup
+                    android:id="@+id/rg1"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="5"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_normal"
+                        android:layout_width="0sp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="普通" />
+
+                    <RadioButton
+                        android:id="@+id/rb_urgent"
+                        android:layout_width="0sp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:text="紧急" />
+                </RadioGroup>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/divide_line" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40sp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="15sp"
+                        android:gravity="center_vertical"
+                        android:text="任务内容"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/white">
+                    <EditText
+                        android:id="@+id/et_content"
+                        android:layout_width="0sp"
+                        android:layout_height="150sp"
+                        android:padding="15dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="3"
+                        android:minLines="10"
+                        android:gravity="top"
+                        android:scrollbars="vertical"
+                        android:background="@drawable/edt_note_bg"
+                        android:textColor="@color/black_text"
+                        android:textSize="14sp"
+                        android:hint="请描述此次发布的任务的内容"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/divide_line" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40sp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="15sp"
+                        android:gravity="center_vertical"
+                        android:text="照片"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/divide_line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <ImageView
+                        android:id="@+id/caraddView"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:background="@mipmap/ic_take_camera"
+                        android:scaleType="fitXY" />
+
+                    <ImageView
+                        android:id="@+id/caraddPeo"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:background="@mipmap/ic_take_camera"
+                        android:scaleType="fitXY" />
+
+                    <ImageView
+                        android:id="@+id/caraddPropaganda"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:background="@mipmap/ic_take_camera"
+                        android:scaleType="fitXY" />
+
+                </LinearLayout><!--photo-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="20dp">
+
+                    <Button
+                        android:id="@+id/logon_bt_logon"
+                        android:layout_width="340dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/check_select"
+                        android:text="发布"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
