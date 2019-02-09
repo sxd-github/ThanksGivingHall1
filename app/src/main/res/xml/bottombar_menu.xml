@@ -18,4 +18,10 @@
         icon="@mipmap/ic_main_my"
         barColorWhenSelected="#2A3137"
         />
+    <tab
+        id="@+id/tab4"
+        title="客户管理"
+        icon="@mipmap/ic_main_my"
+        barColorWhenSelected="#2A3137"
+        />
 </tabs>

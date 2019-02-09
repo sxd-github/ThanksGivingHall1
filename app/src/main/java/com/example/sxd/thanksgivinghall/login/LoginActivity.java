@@ -66,16 +66,16 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 //        actionBar.hide();
 
         //将IP和PORT存入SharedPreferences
-      //  SharedPreUtils.putString(LoginActivity.this, Constants.SP_IP,"192.168.2.114");
-        SharedPreUtils.putString(LoginActivity.this, Constants.SP_PORT,"8080");
+        SharedPreUtils.putString(LoginActivity.this, Constants.SP_IP,"192.168.0.106");
+        SharedPreUtils.putString(LoginActivity.this, Constants.SP_PORT,"8088");
 
         //获取SharedPreferences中存储的登录账号和密码
         tvUsername.setText(SharedPreUtils.getString(LoginActivity.this, Constants.SP_LOGIN_ACCOUNT));
-        tvPassword.setText(SharedPreUtils.getString(LoginActivity.this, Constants.SP_LOGIN_PASSWORD));
-        setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this,SettingActivity.class));
+                tvPassword.setText(SharedPreUtils.getString(LoginActivity.this, Constants.SP_LOGIN_PASSWORD));
+                setting.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startActivity(new Intent(LoginActivity.this,SettingActivity.class));
 //                View views = getLayoutInflater().inflate(R.layout.half_dialog_view, null);
 //                final EditText editText = (EditText) views.findViewById(R.id.dialog_edit);
 //                editText.setText(SharedPreUtils.getString(LoginActivity.this,Constants.SP_IP));

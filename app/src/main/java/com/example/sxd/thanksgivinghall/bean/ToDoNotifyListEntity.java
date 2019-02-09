@@ -1,5 +1,6 @@
 package com.example.sxd.thanksgivinghall.bean;
 
+
 import java.util.List;
 
 /**

@@ -44,6 +44,7 @@
         <activity android:name="com.example.sxd.thanksgivinghall.MainActivity"/>
         <activity android:name="com.example.sxd.thanksgivinghall.notice.NoticeAddActivity" />
         <activity android:name="com.example.sxd.thanksgivinghall.notice.NoticeDetailActivity" />
+        <activity android:name="com.example.sxd.thanksgivinghall.supplier.SupplierAddActivity" />
         <activity android:name="com.example.sxd.thanksgivinghall.task.TaskAddActivity" />
         <activity android:name="com.example.sxd.thanksgivinghall.task.ToDoTaskDetailActivity" />
         <activity android:name="com.example.sxd.thanksgivinghall.task.FinishedTaskDetailActivity" />

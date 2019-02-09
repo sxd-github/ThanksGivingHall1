@@ -129,10 +129,10 @@
                 android:id="@+id/logon_bt_logon"
                 android:layout_width="340dp"
                 android:layout_height="50dp"
-                android:text="登录"
-                android:textSize="18dp"
                 android:background="@drawable/check_select"
-                android:textColor="@color/white_text" />
+                android:text="登录"
+                android:textColor="@color/white_text"
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/setting"

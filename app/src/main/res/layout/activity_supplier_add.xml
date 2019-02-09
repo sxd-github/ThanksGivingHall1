@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/white">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50sp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="15sp"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:text="通知标题"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/supplier_title"
+                    android:layout_width="0sp"
+                    android:layout_height="50sp"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black_text"
+                    android:hint="请输入标题"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/white">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50sp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="15sp"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:text="通知标题"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/supplier_name"
+                    android:layout_width="0sp"
+                    android:layout_height="50sp"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black_text"
+                    android:hint="请输入标题"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40sp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="15sp"
+                    android:gravity="center_vertical"
+                    android:text="备注"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/white">
+
+                    <EditText
+                        android:id="@+id/et_content"
+                        android:layout_width="0sp"
+                        android:layout_height="150sp"
+                        android:padding="15dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="3"
+                        android:minLines="10"
+                        android:gravity="top"
+                        android:scrollbars="vertical"
+                        android:background="@drawable/edt_note_bg"
+                        android:textColor="@color/black_text"
+                        android:textSize="14sp"
+                        android:hint="备注内容"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/divide_line" />
+
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/divide_line" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="20dp">
+
+                    <Button
+                        android:id="@+id/logon_bt_logon"
+                        android:layout_width="340dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/check_select"
+                        android:text="保存"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
