@@ -13,10 +13,11 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.widget.Toast;
 
+import com.example.sxd.thanksgivinghall.PurReceipt.PurReceiptActivity;
 import com.example.sxd.thanksgivinghall.my.MineFragment;
 import com.example.sxd.thanksgivinghall.adapter.FragAdapter;
 import com.example.sxd.thanksgivinghall.notice.NoticeFragment;
-import com.example.sxd.thanksgivinghall.notice.ToDoNoticeActivity;
+import com.example.sxd.thanksgivinghall.supplier.SuppilerActivity;
 import com.example.sxd.thanksgivinghall.task.TaskFragment;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.BottomBarTab;
@@ -53,7 +54,7 @@ public class MainFragment extends FragmentActivity{
 
     private Context context;
     private BottomBar bottomBar;
-    private BottomBarTab nearby2,nearby3;
+    private BottomBarTab nearby2,nearby3,nearby4,nearby5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,6 +103,8 @@ public class MainFragment extends FragmentActivity{
         context = this;
         nearby2 = bottomBar.getTabWithId(R.id.tab2);
         nearby3 = bottomBar.getTabWithId(R.id.tab3);
+//        nearby4 = bottomBar.getTabWithId(R.id.tab4);
+//        nearby5 = bottomBar.getTabWithId(R.id.tab5);
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(@IdRes int tabId) {
@@ -115,13 +118,35 @@ public class MainFragment extends FragmentActivity{
                 if (tabId == R.id.tab3) {
                     mViewPager.setCurrentItem(2);
                 }
+//                if (tabId == R.id.tab4) {
+//                    mViewPager.setCurrentItem(3);
+//                }
+//                if (tabId == R.id.tab5) {
+//                    mViewPager.setCurrentItem(4);
+//                }
             }
         });
 
+//        bottomBar.setOnTabReselectListener(new OnTabReselectListener() {
+//            @Override
+//            public void onTabReSelected(@IdRes int tabId) {
+//                if (tabId == R.id.tab2) {
+//                    // 已经选择了这个标签，又点击一次。即重选。
+//                }
+//            }
+//        });
         bottomBar.setOnTabReselectListener(new OnTabReselectListener() {
             @Override
             public void onTabReSelected(@IdRes int tabId) {
                 if (tabId == R.id.tab2) {
+                    // 已经选择了这个标签，又点击一次。即重选。
+                }
+            }
+        });
+        bottomBar.setOnTabReselectListener(new OnTabReselectListener() {
+            @Override
+            public void onTabReSelected(@IdRes int tabId) {
+                if (tabId == R.id.tab3) {
                     // 已经选择了这个标签，又点击一次。即重选。
                 }
             }
@@ -146,9 +171,11 @@ public class MainFragment extends FragmentActivity{
      */
     private void InitFragment() {
         fragmentList = new ArrayList<Fragment>();
-        fragmentList.add(new NoticeFragment());
-        fragmentList.add(new TaskFragment());
+//        fragmentList.add(new NoticeFragment());
+//        fragmentList.add(new TaskFragment());
         fragmentList.add(new MineFragment());
+        fragmentList.add(new SuppilerActivity());
+        fragmentList.add(new PurReceiptActivity());
         fragmentManager = getSupportFragmentManager();
     }
     /**
@@ -194,6 +221,12 @@ public class MainFragment extends FragmentActivity{
                 case 2:
                     if(flag == 3){
                         nearby3.removeBadge();
+                        flag = 0;
+                    }
+                    break;
+                case 3:
+                    if(flag == 3){
+                        nearby4.removeBadge();
                         flag = 0;
                     }
                     break;

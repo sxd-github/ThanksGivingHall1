@@ -1,4 +1,4 @@
-package com.example.sxd.thanksgivinghall.notice;
+package com.example.sxd.thanksgivinghall.PurReceipt;
 
 import com.example.sxd.thanksgivinghall.api.AppMainService;
 import com.example.sxd.thanksgivinghall.api.ResultListener;
@@ -14,10 +14,10 @@ import retrofit2.Response;
  * Created by sxd on 2018/3/13.
  */
 
-public class NoticeAddModelImpl implements NoticeAddContract.Model{
+public class PurReceiptAddModelImpl implements PurReceiptAddContract.Model{
     public String baseUrl = "";
 
-    public NoticeAddModelImpl(String baseUrl){
+    public PurReceiptAddModelImpl(String baseUrl){
         this.baseUrl = baseUrl;
     }
 
@@ -47,7 +47,8 @@ public class NoticeAddModelImpl implements NoticeAddContract.Model{
     @Override
     public void request(RequestBody body, final ResultListener<Base> result) {
     //    public void request(String title,String content, String files,String createBy, String userIds, final ResultListener<Base> result) {
-        Call<Base> call = AppMainService.getNotifyService(baseUrl).addOaNotify(body);
+        Call<Base> call = AppMainService.getpurReceiptService(baseUrl).addPurReceipt(body);
+
         //请求开始
         result.onStart();
         //执行操作

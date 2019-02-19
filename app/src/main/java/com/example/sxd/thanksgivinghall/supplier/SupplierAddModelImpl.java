@@ -1,9 +1,10 @@
-package com.example.sxd.thanksgivinghall.notice;
+package com.example.sxd.thanksgivinghall.supplier;
 
 import com.example.sxd.thanksgivinghall.api.AppMainService;
 import com.example.sxd.thanksgivinghall.api.ResultListener;
 import com.example.sxd.thanksgivinghall.bean.Base;
 import com.example.sxd.thanksgivinghall.bean.UpLoadFile;
+import com.example.sxd.thanksgivinghall.supplier.SupplierAddContract;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -14,10 +15,10 @@ import retrofit2.Response;
  * Created by sxd on 2018/3/13.
  */
 
-public class NoticeAddModelImpl implements NoticeAddContract.Model{
+public class SupplierAddModelImpl implements SupplierAddContract.Model{
     public String baseUrl = "";
 
-    public NoticeAddModelImpl(String baseUrl){
+    public SupplierAddModelImpl(String baseUrl){
         this.baseUrl = baseUrl;
     }
 
@@ -47,7 +48,8 @@ public class NoticeAddModelImpl implements NoticeAddContract.Model{
     @Override
     public void request(RequestBody body, final ResultListener<Base> result) {
     //    public void request(String title,String content, String files,String createBy, String userIds, final ResultListener<Base> result) {
-        Call<Base> call = AppMainService.getNotifyService(baseUrl).addOaNotify(body);
+        Call<Base> call = AppMainService.getsupplierService(baseUrl).addSupplier(body);
+
         //请求开始
         result.onStart();
         //执行操作

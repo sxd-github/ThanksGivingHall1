@@ -7,7 +7,7 @@ import java.util.List;
  * Created by sxd on 2018/2/2.
  */
 public class ToDoNotifyListEntity {
-    private String success;
+    private String   success;
     private String statusMessage;
     private List<Data> data;
     public class Data{

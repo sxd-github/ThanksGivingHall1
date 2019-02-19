@@ -4,8 +4,11 @@ import com.example.sxd.thanksgivinghall.api.service.DeviceService;
 import com.example.sxd.thanksgivinghall.api.service.LoginService;
 import com.example.sxd.thanksgivinghall.api.service.NotifyService;
 import com.example.sxd.thanksgivinghall.api.service.OfficeUserService;
+import com.example.sxd.thanksgivinghall.api.service.PurReceiptService;
 import com.example.sxd.thanksgivinghall.api.service.TaskService;
 import com.example.sxd.thanksgivinghall.api.service.UpLoadService;
+import com.example.sxd.thanksgivinghall.api.service.SupplierService;
+
 
 public class AppMainService
 {
@@ -15,6 +18,9 @@ public class AppMainService
     private static TaskService taskService;
     private static NotifyService notifyService;
     private static UpLoadService upLoadService;
+    private static SupplierService supplierService;
+    private static PurReceiptService purReceiptService;
+
 
 
     public static LoginService getLoginService(String paramString)
@@ -46,5 +52,15 @@ public class AppMainService
     {
         upLoadService = (UpLoadService)BaseApi.retrofit(paramString).create(UpLoadService.class);
         return upLoadService;
+    }
+    public static SupplierService getsupplierService(String paramString)
+    {
+        supplierService = (SupplierService)BaseApi.retrofit(paramString).create(SupplierService.class);
+        return supplierService;
+    }
+    public static PurReceiptService getpurReceiptService(String paramString)
+    {
+        purReceiptService = (PurReceiptService)BaseApi.retrofit(paramString).create(PurReceiptService.class);
+        return purReceiptService;
     }
 }
