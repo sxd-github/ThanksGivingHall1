@@ -25,8 +25,8 @@ public class PurReceiptListAdapter extends BaseQuickAdapter<PurReceiptListEntity
     @Override
     protected void convert(BaseViewHolder helper, PurReceiptListEntity.Data item) {
 
-        helper.setText(R.id.supName,item.getGoodsName())
-                .setText(R.id.contact,"采购人："+item.getPurchasePerson());
+        helper.setText(R.id.goodsName,item.getGoodsName())
+                .setText(R.id.purchasePerson,"采购人："+item.getPurchasePerson());
 
         /**
          * 紧急通知

@@ -6,8 +6,7 @@ import android.support.annotation.Nullable;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.sxd.thanksgivinghall.R;
-import com.example.sxd.thanksgivinghall.bean.SupplierListEntity;
-import com.example.sxd.thanksgivinghall.bean.ToDoNotifyListEntity;
+import com.example. sxd.thanksgivinghall.bean.SupplierListEntity;
 
 import java.util.List;
 

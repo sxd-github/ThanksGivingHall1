@@ -7,6 +7,7 @@ import com.example.sxd.thanksgivinghall.api.ResultListener;
 import com.example.sxd.thanksgivinghall.base.BasePresenterImpl;
 import com.example.sxd.thanksgivinghall.bean.Base;
 
+
 import org.json.JSONObject;
 
 import java.util.LinkedHashMap;
@@ -56,7 +57,12 @@ public class PurReceiptAddPresenterImpl extends BasePresenterImpl implements Pur
         params.put("goodsType", type);
         params.put("unitPrice", price);
         params.put("goodsNum",num);
-        params.put("totalPrice",price);
+        Double price1=Double.parseDouble(price);
+        Double num1 = Double.parseDouble(num);
+        Double total1 = price1*num1;
+        total = Double.toString(total1);
+
+        params.put("totalPrice",total);
         params.put("recDate",da);
         params.put("purchasePerson",person);
         params.put("payMethod",methord);

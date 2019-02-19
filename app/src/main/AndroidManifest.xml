@@ -48,7 +48,8 @@
         <activity android:name="com.example.sxd.thanksgivinghall.supplier.SupplierAddActivity" />
         <activity android:name="com.example.sxd.thanksgivinghall.supplier.SupplierDetailActivity" />
 
-        <activity android:name="com.example.sxd.thanksgivinghall.PurReceipt.PurReceiptAddActivity"></activity>
+        <activity android:name="com.example.sxd.thanksgivinghall.PurReceipt.PurReceiptAddActivity" />
+        <activity android:name="com.example.sxd.thanksgivinghall.PurReceipt.PurReceiptDetailActivity" />
 
         <activity android:name="com.example.sxd.thanksgivinghall.task.TaskAddActivity" />
         <activity android:name="com.example.sxd.thanksgivinghall.task.ToDoTaskDetailActivity" />
