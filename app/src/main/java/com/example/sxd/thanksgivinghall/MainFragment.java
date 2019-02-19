@@ -103,7 +103,7 @@ public class MainFragment extends FragmentActivity{
         context = this;
         nearby2 = bottomBar.getTabWithId(R.id.tab2);
         nearby3 = bottomBar.getTabWithId(R.id.tab3);
-        nearby3 = bottomBar.getTabWithId(R.id.tab4);
+        nearby4 = bottomBar.getTabWithId(R.id.tab4);
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(@IdRes int tabId) {

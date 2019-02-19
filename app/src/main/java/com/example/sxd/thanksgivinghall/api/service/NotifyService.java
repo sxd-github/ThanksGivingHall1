@@ -37,7 +37,7 @@ public abstract interface NotifyService {
 
     /**
      * 获取通知通告详情
-     * @param notifyId  通知通告id
+     * @param tv_leagelPerson  通知通告id
      * @return
      */
     @GET("infc/infcOaNotify/notifyDetails")

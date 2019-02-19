@@ -20,7 +20,7 @@
         />
     <tab
         id="@+id/tab4"
-        title="客户管理"
+        title="供应商管理"
         icon="@mipmap/ic_main_my"
         barColorWhenSelected="#2A3137"
         />

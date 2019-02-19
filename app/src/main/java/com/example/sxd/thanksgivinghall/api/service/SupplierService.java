@@ -1,6 +1,7 @@
 package com.example.sxd.thanksgivinghall.api.service;
 
 import com.example.sxd.thanksgivinghall.bean.Base;
+import com.example.sxd.thanksgivinghall.bean.SupplierEntity;
 import com.example.sxd.thanksgivinghall.bean.ToDoNotifyDetailEntity;
 import com.example.sxd.thanksgivinghall.bean.SupplierListEntity;
 
@@ -36,15 +37,15 @@ public abstract interface SupplierService {
     Call<SupplierListEntity> supplierList(@Query("userId") String userId);
 
     /**
-     * 获取通知通告详情
-     * @param notifyId  通知通告id
+     * 获取供应商详情
+     * @param supplierId  通知通告id
      * @return
-     *//*
-    @GET("infc/infcOaNotify/notifyDetails")
-    Call<ToDoNotifyDetailEntity> notifyDetail(@Query("notifyId") String notifyId);
+     */
+    @GET("infc/infcSupplier/supplierDetails")
+    Call<SupplierEntity> supplierDetails(@Query("supplierId") String supplierId);
 
 
-    *//**
+    /**
      * 获取当前用户发布的通知通告列表
      * @param userId  当前用户id
      * @return

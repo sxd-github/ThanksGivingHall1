@@ -25,6 +25,8 @@ import com.example.sxd.thanksgivinghall.bean.Constants;
 import com.example.sxd.thanksgivinghall.bean.SupplierListEntity;
 import com.example.sxd.thanksgivinghall.utils.SharedPreUtils;
 
+import java.util.function.Supplier;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -137,9 +139,9 @@ public class SupplierActivity extends Fragment implements SupplierContract.View{
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter mAdapter, View view, int position) {
-                //Intent intent = new Intent(getActivity(),NoticeDetailActivity.class);
-               // intent.putExtra("id", value.getData().get(position).getId());
-                //startActivity(intent);
+                Intent intent = new Intent(getActivity(),SupplierDetailActivity.class);
+                intent.putExtra("id", value.getData().get(position).getId());
+                startActivity(intent);
             }
         });
         mAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
