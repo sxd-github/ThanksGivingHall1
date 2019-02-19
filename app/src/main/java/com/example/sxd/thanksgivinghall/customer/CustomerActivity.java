@@ -1,4 +1,4 @@
-package com.example.sxd.thanksgivinghall.notice;
+package com.example.sxd.thanksgivinghall.customer;
 
 import android.annotation.TargetApi;
 import android.app.NotificationChannel;
@@ -20,9 +20,9 @@ import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.sxd.thanksgivinghall.R;
-import com.example.sxd.thanksgivinghall.adapter.ToDoNotifyListAdapter;
+import com.example.sxd.thanksgivinghall.adapter.CustomerListAdapter;
 import com.example.sxd.thanksgivinghall.bean.Constants;
-import com.example.sxd.thanksgivinghall.bean.ToDoNotifyListEntity;
+import com.example.sxd.thanksgivinghall.bean.CustomerListEntity;
 import com.example.sxd.thanksgivinghall.utils.SharedPreUtils;
 
 import butterknife.BindView;
@@ -32,19 +32,19 @@ import butterknife.Unbinder;
 import static android.content.Context.NOTIFICATION_SERVICE;
 
 /**
- * 当前用户接收通知列表
+ * 客户列表
  */
-public class ToDoNoticeActivity extends Fragment implements ToDoNoticeContract.View{
-    @BindView(R.id.rv_device_list1)
+public class CustomerActivity extends Fragment implements CustomerContract.View{
+    @BindView(R.id.rv_device_list3)
     RecyclerView rvDeviceList;
     @BindView(R.id.swipeLayout)
     SwipeRefreshLayout swipeLayout;
-    @BindView(R.id.fab)
+    @BindView(R.id.fab_customer)
     FloatingActionButton fab;
     Unbinder unbinder;
 
-    private ToDoNotifyListAdapter mAdapter;
-    ToDoNoticeContract.Presenter mPresenter;
+    private CustomerListAdapter mAdapter;
+    CustomerContract.Presenter mPresenter;
     private int mCurrentCounter = 1;
     private int TOTAL_COUNTER = 1;
     String userId, executeTime;
@@ -58,15 +58,15 @@ public class ToDoNoticeActivity extends Fragment implements ToDoNoticeContract.V
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.activity_notice, container, false);
+        View view = inflater.inflate(R.layout.activity_customer, container, false);
         unbinder = ButterKnife.bind(this, view);
-        mPresenter = new ToDoNoticePresenterImpl(getActivity(), this);
+        mPresenter = new CustomerPresenterImpl(getActivity(), this);
         /**
          * Android 8.0 通知栏的适配
          */
         if(Build.VERSION.SDK_INT >=  Build.VERSION_CODES.O){
-            String channelId="notify";
-            String channelName="通知消息";
+            String channelId="customer";
+            String channelName="客户信息";
             int importance = NotificationManager.IMPORTANCE_HIGH;
             createNotificationChannel(channelId,channelName,importance);
         }
@@ -74,7 +74,7 @@ public class ToDoNoticeActivity extends Fragment implements ToDoNoticeContract.V
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getContext(),NoticeAddActivity.class));
+                startActivity(new Intent(getContext(),CustomerAddActivity.class));
             }
         });
         initView();
@@ -114,29 +114,31 @@ public class ToDoNoticeActivity extends Fragment implements ToDoNoticeContract.V
     }
 
     /**
-     * 获取当前用户的通知通告列表
+     * 获取客户信息
      * @param value
      */
     @Override
-    public void requestSuccess(final ToDoNotifyListEntity value) {
+    public void requestSuccess(final CustomerListEntity value) {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         rvDeviceList.setLayoutManager(layoutManager);
-//        rvDeviceList.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
+        rvDeviceList.addItemDecoration(new DividerItemDecoration(
+                getActivity(), DividerItemDecoration.VERTICAL));
         TOTAL_COUNTER = value.getData().size();
         if (TOTAL_COUNTER == 0) {
             rvDeviceList.setAdapter(null);
-            Toast.makeText(getContext(),"暂无任何设备",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(),"暂无任何信息",Toast.LENGTH_SHORT).show();
             return;
         }
         else {
-            mAdapter = new ToDoNotifyListAdapter(R.layout.notice_item, value.getData());
+            mAdapter = new CustomerListAdapter(R.layout.customer_item, value.getData());
             mCurrentCounter = TOTAL_COUNTER;
         }
         rvDeviceList.setAdapter(mAdapter);
+        //item监听点击事件
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter mAdapter, View view, int position) {
-                Intent intent = new Intent(getActivity(),NoticeDetailActivity.class);
+                Intent intent = new Intent(getActivity(),CustomerDetailActivity.class);
                 intent.putExtra("id", value.getData().get(position).getId());
                 startActivity(intent);
             }
@@ -165,7 +167,7 @@ public class ToDoNoticeActivity extends Fragment implements ToDoNoticeContract.V
     }
 
     @Override
-    public void setPresenter(ToDoNoticeContract.Presenter paramT) {
+    public void setPresenter(CustomerContract.Presenter paramT) {
 
     }
 }

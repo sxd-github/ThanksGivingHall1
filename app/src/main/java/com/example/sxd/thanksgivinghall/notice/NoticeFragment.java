@@ -20,7 +20,7 @@ import butterknife.Unbinder;
 
 public class NoticeFragment extends Fragment {
 
-    @BindView(R.id.viewpager)
+    @BindView(R.id.viewpager1)
     ViewPager mViewPager;
     private TabLayout mTabLayout;
     Integer size = 2;
@@ -37,7 +37,7 @@ public class NoticeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.activity_notice_main, container, false);
-        mTabLayout =  view.findViewById(R.id.tabs);
+        mTabLayout =  view.findViewById(R.id.tabs1);
         unbinder = ButterKnife.bind(this, view);
         initViewPager();
         return view;

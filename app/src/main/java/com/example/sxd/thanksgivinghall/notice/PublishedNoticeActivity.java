@@ -35,7 +35,7 @@ import static android.content.Context.NOTIFICATION_SERVICE;
  * 当前用户已发布的通知列表
  */
 public class PublishedNoticeActivity extends Fragment implements PublishedNoticeContract.View{
-    @BindView(R.id.rv_device_list)
+    @BindView(R.id.rv_device_list2)
     RecyclerView rvDeviceList;
     @BindView(R.id.swipeLayout)
     SwipeRefreshLayout swipeLayout;

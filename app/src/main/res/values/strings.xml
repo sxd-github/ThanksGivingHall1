@@ -30,6 +30,7 @@
 
 
     <string name="null_title">标题不能为空</string>
+    <string name="null_cusname">客户姓名不能为空</string>
     <string name="null_content">内容不能为空</string>
     <string name="null_receUserIds">接收人不能为空</string>
 

@@ -48,7 +48,11 @@
         <activity android:name="com.example.sxd.thanksgivinghall.task.ToDoTaskDetailActivity" />
         <activity android:name="com.example.sxd.thanksgivinghall.task.FinishedTaskDetailActivity" />
         <activity android:name="com.example.sxd.thanksgivinghall.task.PublishedTaskDetailActivity" />
+        <activity android:name="com.example.sxd.thanksgivinghall.customer.CustomerAddActivity"/>
+        <activity android:name="com.example.sxd.thanksgivinghall.customer.CustomerDetailActivity" />
+        <activity android:name="com.example.sxd.thanksgivinghall.CustomerOrder.OrderAddActivity" />
 
+        <activity android:name="com.example.sxd.thanksgivinghall.CustomerOrder.OrderDetailActivity" />
         <activity android:name="com.example.sxd.thanksgivinghall.treelist.base.BasesActivity" />
         <activity android:name="com.example.sxd.thanksgivinghall.treelist.officer.BasesActivity" />
         <activity android:name="com.example.sxd.thanksgivinghall.treelist.officeUser.BasesActivity" />

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CustomerOrder.OrderAddActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="50sp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15sp"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:text="客户姓名"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/customer_cusname"
+            android:layout_width="0sp"
+            android:layout_height="50sp"
+            android:layout_gravity="center"
+            android:layout_weight="5"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:textColor="@color/black_text"
+            android:hint="请输入姓名"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="进货类别" />
+
+            <Spinner
+                android:id="@+id/order_add_goods_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/reType"/>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/order_goodsname"
+            android:layout_width="0sp"
+            android:layout_height="50sp"
+            android:layout_gravity="center"
+            android:layout_weight="5"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:textColor="@color/black_text"
+            android:hint="请输入名称"
+            android:textSize="14sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="货物数量" />
+
+            <Spinner
+                android:id="@+id/sp_fin_record_add_goodsnums"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/trType"/>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/order_goods"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:hint="请输入——"
+            android:inputType="numberDecimal"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="50sp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15sp"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:text="单价"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/goods_price"
+            android:layout_width="0sp"
+            android:layout_height="50sp"
+            android:layout_gravity="center"
+            android:layout_weight="5"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:textColor="@color/black_text"
+            android:hint="请输入价格"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="50sp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15sp"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:text="总价"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/sum_goods_price"
+            android:layout_width="0sp"
+            android:layout_height="50sp"
+            android:layout_gravity="center"
+            android:layout_weight="5"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:textColor="@color/black_text"
+            android:hint="显示总价"
+            android:textSize="14sp" />
+    </LinearLayout>
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="部门" />
+
+
+        <Spinner
+            android:id="@+id/sp_fin_record_add_dept"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/dept"/>
+    </LinearLayout>-->
+
+  <!--  <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="交易类型" />-->
+
+
+   <!-- <Spinner
+        android:id="@+id/sp_fin_record_add_bus_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="摘要" />
+
+    <EditText
+        android:id="@+id/et_fin_record_add_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_fin_record_add_out_ac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="出账账户" />
+
+    <Spinner
+        android:id="@+id/sp_fin_record_add_out_ac"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_fin_record_add_in_ac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="入账账户" />-->
+
+    <!--<Spinner
+        android:id="@+id/sp_fin_record_add_in_ac"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="时间" />
+
+    <DatePicker
+        android:id="@+id/add_note_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        android:spinnersShown="true"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/white">
+        <Button
+            android:id="@+id/logon_bt_logon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="保存" />
+        <Button
+            android:id="@+id/btn_fin_record_add_clear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="取消" />
+    </LinearLayout>
+
+</LinearLayout>

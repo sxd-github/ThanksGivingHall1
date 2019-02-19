@@ -13,6 +13,24 @@
         barColorWhenSelected="#2A3137"
         />
     <tab
+        id="@+id/tab4"
+        title="客户管理"
+        icon="@mipmap/ic_main_my"
+        barColorWhenSelected="#2A3137"
+        />
+    <tab
+        id="@+id/tab5"
+        title="订货信息"
+        icon="@mipmap/ic_main_my"
+        barColorWhenSelected="#2A3137"
+        />
+    <tab
+        id="@+id/tab6"
+        title="我的账单"
+        icon="@mipmap/ic_main_my"
+        barColorWhenSelected="#2A3137"
+        />
+    <tab
         id="@+id/tab3"
         title="个人中心"
         icon="@mipmap/ic_main_my"

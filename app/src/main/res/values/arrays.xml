@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="reType">
+        <item>蔬菜</item>
+        <item>水果</item>
+        <item>面类</item>
+        <item>肉类</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="trType">
+        <item>公斤</item>
+        <item>数量</item>
+    </string-array>
+    <string-array name="year" >
+        <item>2011</item>
+        <item>2012</item>
+        <item>2013</item>
+        <item>2014</item>
+        <item>2015</item>
+        <item>2016</item>
+        <item>2017</item>
+        <item>2018</item>
+        <item>2019</item>
+    </string-array>
+    <string-array name="month">
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+    </string-array>
+    <!--<string-array name="busTypeIn">
+        <item>服务收入</item>
+        <item>饭店收入</item>
+        <item>小吃收入</item>
+        <item>程序收入</item>
+        <item>借款收入</item>
+        <item>其他收入</item>
+    </string-array>
+    <string-array name="busTypeOut">
+        <item>材料支出</item>
+        <item>房租支出</item>
+        <item>水电支出</item>
+        <item>税费支出</item>
+        <item>出差支出</item>
+        <item>招待支出</item>
+        <item>社保支出</item>
+        <item>其他支出</item>
+    </string-array>
+    <string-array name="busTypeCh">
+        <item>提现</item>
+        <item>存款</item>
+    </string-array>
+    <string-array name="dept">
+        <item>饭店</item>
+        <item>按摩院</item>
+        <item>开发室</item>
+    </string-array>-->
+</resources>
