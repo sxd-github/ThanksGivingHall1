@@ -118,7 +118,18 @@
                     android:text="企业性质"
                     android:textSize="14sp" />
 
-                <EditText
+                <!--<EditText-->
+                    <!--android:id="@+id/supNature"-->
+                    <!--android:layout_width="0sp"-->
+                    <!--android:layout_height="50sp"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:layout_weight="5"-->
+                    <!--android:background="@null"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:hint="请输入企业性质"-->
+                    <!--android:textColor="@color/black_text"-->
+                    <!--android:textSize="14sp" />-->
+                <Spinner
                     android:id="@+id/supNature"
                     android:layout_width="0sp"
                     android:layout_height="50sp"
@@ -126,7 +137,7 @@
                     android:layout_weight="5"
                     android:background="@null"
                     android:gravity="center_vertical"
-                    android:hint="请输入企业性质"
+                    android:hint="请选择企业性质"
                     android:textColor="@color/black_text"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -375,7 +386,18 @@
                     android:text="开户银行"
                     android:textSize="14sp" />
 
-                <EditText
+                <!--<EditText-->
+                    <!--android:id="@+id/bankName"-->
+                    <!--android:layout_width="0sp"-->
+                    <!--android:layout_height="50sp"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:layout_weight="5"-->
+                    <!--android:background="@null"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:hint="请输入开户银行"-->
+                    <!--android:textColor="@color/black_text"-->
+                    <!--android:textSize="14sp" />-->
+                <Spinner
                     android:id="@+id/bankName"
                     android:layout_width="0sp"
                     android:layout_height="50sp"
@@ -383,7 +405,7 @@
                     android:layout_weight="5"
                     android:background="@null"
                     android:gravity="center_vertical"
-                    android:hint="请输入开户银行"
+                    android:hint="请选择银行种类"
                     android:textColor="@color/black_text"
                     android:textSize="14sp" />
             </LinearLayout>

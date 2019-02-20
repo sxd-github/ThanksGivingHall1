@@ -44,6 +44,7 @@
                     android:textColor="@color/black_text"
                     android:textSize="14sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -72,6 +73,7 @@
                     android:textColor="@color/black_text"
                     android:textSize="14sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -88,7 +90,18 @@
                     android:text="进货类型"
                     android:textSize="14sp" />
 
-                <EditText
+                <!--<EditText-->
+                    <!--android:id="@+id/goodsType"-->
+                    <!--android:layout_width="0sp"-->
+                    <!--android:layout_height="50sp"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:layout_weight="5"-->
+                    <!--android:background="@null"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:hint="请输入进货类型   "-->
+                    <!--android:textColor="@color/black_text"-->
+                    <!--android:textSize="14sp" />-->
+                <Spinner
                     android:id="@+id/goodsType"
                     android:layout_width="0sp"
                     android:layout_height="50sp"
@@ -96,10 +109,11 @@
                     android:layout_weight="5"
                     android:background="@null"
                     android:gravity="center_vertical"
-                    android:hint="请输入进货类型   "
+                    android:hint="请选择进货类型"
                     android:textColor="@color/black_text"
                     android:textSize="14sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -128,6 +142,7 @@
                     android:textColor="@color/black_text"
                     android:textSize="14sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -156,34 +171,34 @@
                     android:textColor="@color/black_text"
                     android:textSize="14sp" />
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/white">
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:background="@color/white">-->
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="50sp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="15sp"
-                    android:layout_weight="2"
-                    android:gravity="center_vertical"
-                    android:text="总价"
-                    android:textSize="14sp" />
+            <!--<TextView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="50sp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginLeft="15sp"-->
+            <!--android:layout_weight="2"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:text="总价"-->
+            <!--android:textSize="14sp" />-->
 
-                <EditText
-                    android:id="@+id/totalPrice"
-                    android:layout_width="0sp"
-                    android:layout_height="50sp"
-                    android:layout_gravity="center"
-                    android:layout_weight="5"
-                    android:background="@null"
-                    android:gravity="center_vertical"
-                    android:hint="请输入总价"
-                    android:textColor="@color/black_text"
-                    android:textSize="14sp" />
-            </LinearLayout>
+            <!--<EditText-->
+            <!--android:id="@+id/totalPrice"-->
+            <!--android:layout_width="0sp"-->
+            <!--android:layout_height="50sp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_weight="5"-->
+            <!--android:background="@null"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:hint="请输入总价"-->
+            <!--android:textColor="@color/black_text"-->
+            <!--android:textSize="14sp" />-->
+            <!--</LinearLayout>-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -214,6 +229,7 @@
                     android:textColor="@color/black_text"
                     android:textSize="14sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -242,6 +258,7 @@
                     android:textColor="@color/black_text"
                     android:textSize="14sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -258,7 +275,18 @@
                     android:text="支付方式"
                     android:textSize="14sp" />
 
-                <EditText
+                <!--<EditText-->
+                    <!--android:id="@+id/payMethod"-->
+                    <!--android:layout_width="0sp"-->
+                    <!--android:layout_height="50sp"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:layout_weight="5"-->
+                    <!--android:background="@null"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:hint="请输入支付方式"-->
+                    <!--android:textColor="@color/black_text"-->
+                    <!--android:textSize="14sp" />-->
+                <Spinner
                     android:id="@+id/payMethod"
                     android:layout_width="0sp"
                     android:layout_height="50sp"
@@ -269,6 +297,7 @@
                     android:hint="请输入支付方式"
                     android:textColor="@color/black_text"
                     android:textSize="14sp" />
+
             </LinearLayout>
 
             <TextView

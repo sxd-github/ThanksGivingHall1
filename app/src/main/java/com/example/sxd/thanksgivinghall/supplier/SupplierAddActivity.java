@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.sxd.thanksgivinghall.R;
@@ -42,7 +44,7 @@ public class SupplierAddActivity extends BaseActivity implements SupplierAddCont
     @BindView(R.id.legalPerson)
     EditText legalPerson;
     @BindView(R.id.supNature)
-    EditText supNature;
+    Spinner supNature;
     @BindView(R.id.supUrl)
     EditText supUrl;
     @BindView(R.id.supAddress)
@@ -60,7 +62,7 @@ public class SupplierAddActivity extends BaseActivity implements SupplierAddCont
     @BindView(R.id.faxNum)
     EditText faxNum;
     @BindView(R.id.bankName)
-    EditText bankName;
+    Spinner bankName;
     @BindView(R.id.bankNum)
     EditText bankNum;
     @BindView(R.id.creditRating)
@@ -71,7 +73,9 @@ public class SupplierAddActivity extends BaseActivity implements SupplierAddCont
 //    @BindView(R.id.setTime)
 //    EditText setTime;
 
-
+    private Spinner met_spinner,natu_spinner;
+    private List<String> data_list;
+    private ArrayAdapter<String> arr_adapter_natu,arr_adapter_met;
     String name,capital,person,nature,url,address,time,code,con,email,tel,faxnum,bank,banknum,credit,business="0";
     private SupplierAddContract.Presenter mPresenter;
 
@@ -84,6 +88,42 @@ public class SupplierAddActivity extends BaseActivity implements SupplierAddCont
         ButterKnife.bind(this);
         setTitle("新增供应商");//设置标题
         setBackArrow();//设置返回按钮和点击事件
+
+        /*银行种类选择框数据*/
+        met_spinner = (Spinner) findViewById(R.id.bankName);
+        data_list = new ArrayList<String>();
+        data_list.add("中国农业银行");
+        data_list.add("中国工商银行");
+        data_list.add("中国建设银行");
+        data_list.add("中国银行");
+        data_list.add("中国建设银行");
+        data_list.add("交通银行");
+
+        //适配器
+        arr_adapter_met= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data_list);
+        //设置样式
+        arr_adapter_met.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //加载适配器
+        met_spinner.setAdapter(arr_adapter_met);
+
+        /*企业性质选择框数据*/
+        natu_spinner = (Spinner) findViewById(R.id.supNature);
+        data_list = new ArrayList<String>();
+        data_list.add("国有企业");
+        data_list.add("集体所有制");
+        data_list.add("私营企业");
+        data_list.add("股份制企业");
+        data_list.add("有限合作企业");
+        data_list.add("联营企业");
+        data_list.add("外资投商企业");
+        data_list.add("个人独资企业");
+
+        //适配器
+        arr_adapter_natu= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data_list);
+        //设置样式
+        arr_adapter_natu.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //加载适配器
+        natu_spinner.setAdapter(arr_adapter_natu);
         mPresenter = new SupplierAddPresenterImpl(SupplierAddActivity.this, this);
 
 
@@ -173,7 +213,7 @@ public class SupplierAddActivity extends BaseActivity implements SupplierAddCont
         address = supAddress.getText().toString();
         capital = regCapital.getText().toString();
         person = legalPerson.getText().toString();
-        nature = supNature.getText().toString();
+        nature = supNature.getSelectedItem().toString();
         url = supUrl.getText().toString();
 //        time = setTime.getText().toString();
         code = zipCode.getText().toString();
@@ -181,8 +221,8 @@ public class SupplierAddActivity extends BaseActivity implements SupplierAddCont
         email = supEmail.getText().toString();
         tel = supTel.getText().toString();
         faxnum = faxNum.getText().toString();
-        bank = bankName.getText().toString();
-        banknum = bankName.getText().toString();
+        bank = bankName.getSelectedItem().toString();
+        banknum = bankNum.getText().toString();
         credit = creditRating.getText().toString();
         business = businessScope.getText().toString();
         mPresenter.request(name,address,capital,person,nature,url,time,code,con,email,tel,faxnum,bank,banknum,credit,business);

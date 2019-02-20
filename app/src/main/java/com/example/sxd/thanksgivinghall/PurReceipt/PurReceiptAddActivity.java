@@ -5,9 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.sxd.thanksgivinghall.R;
@@ -38,19 +40,19 @@ public class PurReceiptAddActivity extends BaseActivity implements PurReceiptAdd
     @BindView(R.id.goodsName)
     EditText goodsName;
     @BindView(R.id.goodsType)
-    EditText goodsType;
+    Spinner goodsType;
     @BindView(R.id.unitPrice)
     EditText unitPrice;
     @BindView(R.id.goodsNum)
     EditText goodsNum;
-    @BindView(R.id.totalPrice)
-    EditText totalPrice;
+//    @BindView(R.id.totalPrice)
+//    EditText totalPrice;
     @BindView(R.id.rec_date)
     DatePicker dpRecDate;
     @BindView(R.id.purchasePerson)
     EditText purchasePerson;
     @BindView(R.id.payMethod)
-    EditText payMethod;
+    Spinner payMethod;
 
 
 //    @BindView(R.id.setTime)
@@ -59,7 +61,9 @@ public class PurReceiptAddActivity extends BaseActivity implements PurReceiptAdd
 
     String sup,name,num,type,price,total,da,person,methord;
     private PurReceiptAddContract.Presenter mPresenter;
-
+    private Spinner met_spinner,type_spinner;
+    private List<String> data_list;
+    private ArrayAdapter<String> arr_adapter_type,arr_adapter_met;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +71,39 @@ public class PurReceiptAddActivity extends BaseActivity implements PurReceiptAdd
         ButterKnife.bind(this);
         setTitle("新增供应商");//设置标题
         setBackArrow();//设置返回按钮和点击事件
+
+        /*进货类型选择框数据*/
+        type_spinner = (Spinner) findViewById(R.id.goodsType);
+        data_list = new ArrayList<String>();
+        data_list.add("蔬菜");
+        data_list.add("面条");
+        data_list.add("米类");
+        data_list.add("肉类");
+        data_list.add("其他");
+
+        //适配器
+        arr_adapter_type= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data_list);
+        //设置样式
+        arr_adapter_type.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //加载适配器
+        type_spinner.setAdapter(arr_adapter_type);
+
+
+        /*支付方式选择框数据*/
+        met_spinner = (Spinner) findViewById(R.id.payMethod);
+        data_list = new ArrayList<String>();
+        data_list.add("支付宝");
+        data_list.add("微信");
+        data_list.add("现金");
+        data_list.add("其他");
+
+        //适配器
+        arr_adapter_met= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data_list);
+        //设置样式
+        arr_adapter_met.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //加载适配器
+        met_spinner.setAdapter(arr_adapter_met);
+
         mPresenter = new PurReceiptAddPresenterImpl(PurReceiptAddActivity.this, this);
 
 
@@ -141,13 +178,14 @@ public class PurReceiptAddActivity extends BaseActivity implements PurReceiptAdd
 //        now = sdf.format(new Date());
         sup = supplier.getText().toString();
         name = goodsName.getText().toString();
-        type= goodsType.getText().toString();
+        type= goodsType.getSelectedItem().toString();
         price = unitPrice.getText().toString();
         num = goodsNum.getText().toString();
-        total = totalPrice.getText().toString();
+//        total = totalPrice.getText().toString();
 //        da = date.getText().toString();
         person = purchasePerson.getText().toString();
-        methord = payMethod.getText().toString();
+//        methord = payMethod.getText().toString();
+        methord = payMethod.getSelectedItem().toString();
         mPresenter.request(sup,name,num,type,price,total,da,person,methord);
 
     }
