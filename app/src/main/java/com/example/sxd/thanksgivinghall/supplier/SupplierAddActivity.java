@@ -103,24 +103,17 @@ public class SupplierAddActivity extends BaseActivity implements SupplierAddCont
 
         @SuppressLint("NewApi")
         private void setSupDate() {
-            time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+            time = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
             dpSetTime.setOnDateChangedListener(new DatePicker.OnDateChangedListener() {
                 @Override
                 public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                     Date date=new Date(year-1900,monthOfYear,dayOfMonth);
-                    String setTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date);
+                    String setTime = new SimpleDateFormat("yyyy-MM-dd").format(date);
                     time=setTime;
                 }
             });
         }
 
-
-
-
-
-    private void setdate() {
-
-    }
 
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -161,9 +154,19 @@ public class SupplierAddActivity extends BaseActivity implements SupplierAddCont
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void initValue() {
 //        SimpleDateFormat sdf = new SimpleDateFormatmpleDateFormat("yyyyMMddHHmm", Locale.CHINA);
 //        now = sdf.format(new Date());
+            time = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+            dpSetTime.setOnDateChangedListener(new DatePicker.OnDateChangedListener() {
+                @Override
+                public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                    Date date=new Date(year-1900,monthOfYear,dayOfMonth);
+                    String setTime = new SimpleDateFormat("yyyy-MM-dd").format(date);
+                    time=setTime;
+                }
+            });
         credit = creditRating.getText().toString();
         business = businessScope.getText().toString();
         name = supName.getText().toString();

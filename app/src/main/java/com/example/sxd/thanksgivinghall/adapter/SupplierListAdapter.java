@@ -26,7 +26,8 @@ public class SupplierListAdapter extends BaseQuickAdapter<SupplierListEntity.Dat
     protected void convert(BaseViewHolder helper, SupplierListEntity.Data item) {
 
         helper.setText(R.id.supName,item.getSupName())
-                .setText(R.id.contact,"联系人："+item.getContact());
+                .setText(R.id.item_contact,"联系人："+item.getContact())
+                .setText(R.id.supTel,"联系电话："+item.getSupTel());
 
         /**
          * 紧急通知
