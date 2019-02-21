@@ -15,6 +15,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -40,6 +41,7 @@ public class PurReceiptActivity extends Fragment implements PurRecetptContract.V
     SwipeRefreshLayout swipeLayout;
     @BindView(R.id.fab)
     FloatingActionButton fab;
+
     Unbinder unbinder;
 
     private PurReceiptListAdapter mAdapter;

@@ -27,6 +27,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static android.app.PendingIntent.getActivity;
+
 /**
  * Created by 160905 on 2018/2/3.
  */
@@ -69,6 +71,8 @@ public class SupplierAddActivity extends BaseActivity implements SupplierAddCont
     EditText creditRating;
     @BindView(R.id.businessScope)
     EditText businessScope;
+    @BindView(R.id.bt_return)
+    Button bt_return;
 
 //    @BindView(R.id.setTime)
 //    EditText setTime;
@@ -131,6 +135,12 @@ public class SupplierAddActivity extends BaseActivity implements SupplierAddCont
             @Override
             public void onClick(View view) {
                 initValue();
+            }
+        });
+        bt_return.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
 

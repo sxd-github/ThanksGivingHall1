@@ -74,6 +74,12 @@
                     android:text="进货时间"
                     android:textSize="12sp" />
             </LinearLayout>
+            <!--<ImageView-->
+                <!--android:id="@+id/iv_task"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginRight="5dp"-->
+                <!--android:src="@mipmap/ongoing"/>-->
 
         </LinearLayout>
 

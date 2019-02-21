@@ -28,6 +28,18 @@ public class PurReceiptListAdapter extends BaseQuickAdapter<PurReceiptListEntity
         helper.setText(R.id.goodsName,item.getGoodsName())
                 .setText(R.id.totalPrice,"总价："+item.getTotalPrice())
                 .setText(R.id.date,"采购时间："+item.getDate());
+        if(item.getGoodsType().equals("蔬菜")){
+            helper.setImageResource(R.id.iv_icon,R.mipmap.vegetable);
+        }else if(item.getGoodsType().equals("面条")){
+            helper.setImageResource(R.id.iv_icon,R.mipmap.noodle);
+        }else if(item.getGoodsType().equals("米类")){
+            helper.setImageResource(R.id.iv_icon,R.mipmap.mifan);
+        }else if(item.getGoodsType().equals("肉类")){
+            helper.setImageResource(R.id.iv_icon,R.mipmap.meet);
+        }
+        else if(item.getGoodsType().equals("其他")){
+            helper.setImageResource(R.id.iv_icon,R.mipmap.other);
+        }
 
         /**
          * 紧急通知
