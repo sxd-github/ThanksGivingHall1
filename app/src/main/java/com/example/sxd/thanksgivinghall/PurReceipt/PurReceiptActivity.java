@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -97,6 +98,7 @@ public class PurReceiptActivity extends Fragment implements PurRecetptContract.V
                 swipeLayout.setRefreshing(false);//刷新事件结束，隐藏刷新进度条
             }
         });
+        rvDeviceList.setAdapter(mAdapter);
     }
 
 
@@ -133,6 +135,8 @@ public class PurReceiptActivity extends Fragment implements PurRecetptContract.V
             mAdapter = new PurReceiptListAdapter(R.layout.receipt_item, value.getData());
             mCurrentCounter = TOTAL_COUNTER;
         }
+
+
         rvDeviceList.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
@@ -156,7 +160,6 @@ public class PurReceiptActivity extends Fragment implements PurRecetptContract.V
                 }, 800);
             }
         }, rvDeviceList);
-
 
     }
 

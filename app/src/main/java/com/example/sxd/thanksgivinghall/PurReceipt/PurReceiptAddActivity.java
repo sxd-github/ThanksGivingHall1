@@ -45,19 +45,12 @@ public class PurReceiptAddActivity extends BaseActivity implements PurReceiptAdd
     EditText unitPrice;
     @BindView(R.id.goodsNum)
     EditText goodsNum;
-//    @BindView(R.id.totalPrice)
-//    EditText totalPrice;
     @BindView(R.id.rec_date)
     DatePicker dpRecDate;
     @BindView(R.id.purchasePerson)
     EditText purchasePerson;
     @BindView(R.id.payMethod)
     Spinner payMethod;
-
-
-//    @BindView(R.id.setTime)
-//    EditText setTime;
-
 
     String sup,name,num,type,price,total,da,person,methord;
     private PurReceiptAddContract.Presenter mPresenter;

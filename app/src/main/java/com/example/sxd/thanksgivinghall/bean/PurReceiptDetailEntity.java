@@ -18,6 +18,7 @@ public class PurReceiptDetailEntity {
         private String goodsNum;		// 进货数量（个/斤）
         private String totalPrice;		// 总价
         private String date;		// 进货时间
+        private String paySum;		// 总价之和
         private String purchasePerson;		// 采购人
         private String payMethod;		// 支付方式
 
@@ -93,7 +94,13 @@ public class PurReceiptDetailEntity {
         public void setPayMethod(String payMethod) {
             this.payMethod = payMethod;
         }
+        public String getPaySum() {
+            return paySum;
+        }
 
+        public void setPaySum(String paySum) {
+            this.paySum = paySum;
+        }
 
     }
 

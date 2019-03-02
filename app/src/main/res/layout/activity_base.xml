@@ -13,7 +13,7 @@
         android:id="@+id/common_title_tb"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorSuccess"
         app:layout_scrollFlags="scroll|enterAlways"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         android:elevation="6dp">

@@ -15,19 +15,20 @@
             android:id="@+id/rv_device_list">
         </android.support.v7.widget.RecyclerView>
     </android.support.v4.widget.SwipeRefreshLayout>
-<android.support.design.widget.FloatingActionButton
-    android:id="@+id/fab"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="end|bottom"
-    android:layout_marginRight="30dp"
-    android:layout_marginBottom="30dp"
-    android:clickable="true"
-    app:elevation="6dp"
-    app:pressedTranslationZ="12dp"
-    app:borderWidth="0dp"
-    android:backgroundTint="@color/camera_pop_normal"
-    app:rippleColor="@color/camera_add_press"
-    android:src="@mipmap/add_notice"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/colorSuccess"
+        android:clickable="true"
+        android:src="@mipmap/add_notice"
+        app:borderWidth="0dp"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        app:rippleColor="@color/colorSuccessDark" />
 
 </android.support.design.widget.CoordinatorLayout>

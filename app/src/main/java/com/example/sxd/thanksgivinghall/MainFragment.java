@@ -14,6 +14,8 @@ import android.support.v4.view.ViewPager;
 import android.widget.Toast;
 
 import com.example.sxd.thanksgivinghall.PurReceipt.PurReceiptActivity;
+import com.example.sxd.thanksgivinghall.PurReceipt.PurReceiptFragment;
+import com.example.sxd.thanksgivinghall.bill.BillActivity;
 import com.example.sxd.thanksgivinghall.my.MineFragment;
 import com.example.sxd.thanksgivinghall.adapter.FragAdapter;
 import com.example.sxd.thanksgivinghall.notice.NoticeFragment;
@@ -103,7 +105,7 @@ public class MainFragment extends FragmentActivity{
         context = this;
         nearby2 = bottomBar.getTabWithId(R.id.tab2);
         nearby3 = bottomBar.getTabWithId(R.id.tab3);
-//        nearby4 = bottomBar.getTabWithId(R.id.tab4);
+        nearby4 = bottomBar.getTabWithId(R.id.tab4);
 //        nearby5 = bottomBar.getTabWithId(R.id.tab5);
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
@@ -118,9 +120,9 @@ public class MainFragment extends FragmentActivity{
                 if (tabId == R.id.tab3) {
                     mViewPager.setCurrentItem(2);
                 }
-//                if (tabId == R.id.tab4) {
-//                    mViewPager.setCurrentItem(3);
-//                }
+                if (tabId == R.id.tab4) {
+                    mViewPager.setCurrentItem(3);
+                }
 //                if (tabId == R.id.tab5) {
 //                    mViewPager.setCurrentItem(4);
 //                }
@@ -151,6 +153,14 @@ public class MainFragment extends FragmentActivity{
                 }
             }
         });
+        bottomBar.setOnTabReselectListener(new OnTabReselectListener() {
+            @Override
+            public void onTabReSelected(@IdRes int tabId) {
+                if (tabId == R.id.tab4) {
+                    // 已经选择了这个标签，又点击一次。即重选。
+                }
+            }
+        });
 
         bottomBar.setTabSelectionInterceptor(new TabSelectionInterceptor() {
             @Override
@@ -176,6 +186,7 @@ public class MainFragment extends FragmentActivity{
         fragmentList.add(new MineFragment());
         fragmentList.add(new SuppilerActivity());
         fragmentList.add(new PurReceiptActivity());
+        fragmentList.add(new BillActivity());
         fragmentManager = getSupportFragmentManager();
     }
     /**

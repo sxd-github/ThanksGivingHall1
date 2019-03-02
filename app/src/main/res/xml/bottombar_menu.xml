@@ -16,18 +16,24 @@
         id="@+id/tab1"
         title="个人中心"
         icon="@mipmap/ic_main_my"
-        barColorWhenSelected="#2A3137"
+        barColorWhenSelected="#ffffff"
         />
     <tab
         id="@+id/tab2"
         title="供应商管理"
         icon="@mipmap/ic_main_my"
-        barColorWhenSelected="#2A3137"
+        barColorWhenSelected="#ffffff"
         />
     <tab
         id="@+id/tab3"
         title="订单管理"
         icon="@mipmap/ic_main_task"
-        barColorWhenSelected="#2A3137"
+        barColorWhenSelected="#ffffff"
+        />
+    <tab
+        id="@+id/tab4"
+        title="我的账单"
+        icon="@mipmap/ic_main_task"
+        barColorWhenSelected="#ffffff"
         />
 </tabs>

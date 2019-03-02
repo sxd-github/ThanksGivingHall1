@@ -45,7 +45,7 @@
                 android:layout_weight="1"
                 android:layout_height="40dp"
                 android:background="@drawable/pop_single_selector"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/colorSuccess"
                 android:text="@string/cancel"
                 android:textSize="16sp" />
 

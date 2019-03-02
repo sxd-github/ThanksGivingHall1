@@ -1,5 +1,6 @@
 package com.example.sxd.thanksgivinghall.api;
 
+import com.example.sxd.thanksgivinghall.api.service.BillService;
 import com.example.sxd.thanksgivinghall.api.service.DeviceService;
 import com.example.sxd.thanksgivinghall.api.service.LoginService;
 import com.example.sxd.thanksgivinghall.api.service.NotifyService;
@@ -20,6 +21,7 @@ public class AppMainService
     private static UpLoadService upLoadService;
     private static SupplierService supplierService;
     private static PurReceiptService purReceiptService;
+    private static BillService billService;
 
 
 
@@ -62,5 +64,10 @@ public class AppMainService
     {
         purReceiptService = (PurReceiptService)BaseApi.retrofit(paramString).create(PurReceiptService.class);
         return purReceiptService;
+    }
+    public static BillService getBillService(String paramString)
+    {
+        billService = (BillService) BaseApi.retrofit(paramString).create(BillService.class);
+        return billService;
     }
 }

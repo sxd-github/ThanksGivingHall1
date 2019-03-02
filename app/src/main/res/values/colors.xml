@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#3c763d</color>
-    <color name="colorPrimaryDark">#3c763d</color>
+    <color name="colorPrimaryDark">#3c663d</color>
+    <color name="colorMuted">#777</color>
+    <color name="colorSuccess">#3c763d</color>
+    <color name="colorSuccessDark">#3c663d</color>
+    <color name="colorInfo">#31708f</color>
+    <color name="colorWarning">#8a6d3b</color>
+    <color name="colorDanger">#a94442</color>
     <color name="colorAccent">#FF4081</color>
 
     <!-- 作用于次要的文字提示 -->

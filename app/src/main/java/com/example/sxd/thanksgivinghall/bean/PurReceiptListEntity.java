@@ -22,6 +22,24 @@ public class PurReceiptListEntity {
         private String date;		// 进货时间
         private String purchasePerson;		// 采购人
         private String payMethod;		// 支付方式
+        private String paySum;		// 总价之和
+        private String chooseMonth;   //选择月份
+
+        public String getChooseMonth() {
+            return chooseMonth;
+        }
+
+        public void setChooseMonth(String chooseMonth) {
+            this.chooseMonth = chooseMonth;
+        }
+
+        public String getPaySum() {
+            return paySum;
+        }
+
+        public void setPaySum(String paySum) {
+            this.paySum = paySum;
+        }
 
         public String getId() {
             return id;
