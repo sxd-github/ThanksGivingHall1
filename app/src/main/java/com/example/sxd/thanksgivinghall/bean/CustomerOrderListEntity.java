@@ -18,7 +18,8 @@ public class CustomerOrderListEntity {
         private String price;		// 单价
         private String goodsnum;		// 进货量
         private String sumprice;		// 总价
-        private Date date;		// 日期
+        private String ordertype;		// 支付类型
+        private String date;		// 日期
         private Date beginDate;		// 开始 日期
         private Date endDate;		// 结束 日期
 
@@ -70,11 +71,19 @@ public class CustomerOrderListEntity {
             this.sumprice = sumprice;
         }
 
-        public Date getDate() {
+        public String getOrdertype() {
+            return ordertype;
+        }
+
+        public void setOrdertype(String ordertype) {
+            this.ordertype = ordertype;
+        }
+
+        public String getDate() {
             return date;
         }
 
-        public void setDate(Date date) {
+        public void setDate(String date) {
             this.date = date;
         }
 

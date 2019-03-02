@@ -21,7 +21,7 @@ public interface OrderAddContract {
 
     interface Presenter extends BasePresenter<View> {
 
-        void request(String cusname, String goods, String nums, String price, String date, String sendUserId, String receUserIds, String urgentFlag);
+        void request(String cusname, String goods, String nums, String price, String date,String OrderType, String sendUserId, String receUserIds, String urgentFlag);
       //  void request(RequestBody body);
     }
 

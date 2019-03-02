@@ -11,6 +11,11 @@
         <item>公斤</item>
         <item>数量</item>
     </string-array>
+    <!--<string-array name="orType">
+        <item>微信</item>
+        <item>支付宝</item>
+        <item>其他</item>
+    </string-array>-->
     <string-array name="year" >
         <item>2011</item>
         <item>2012</item>
@@ -22,18 +27,33 @@
         <item>2018</item>
         <item>2019</item>
     </string-array>
-    <string-array name="month">
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
+    <string-array name="month" >
+        <item>全年</item>
+        <item>01月</item>
+        <item>02月</item>
+        <item>03月</item>
+        <item>04月</item>
+        <item>05月</item>
+        <item>06月</item>
+        <item>07月</item>
+        <item>08月</item>
+        <item>09月</item>
+        <item>10月</item>
+        <item>11月</item>
+        <item>12月</item>
     </string-array>
+    <!--<string-array name="month">-->
+        <!--<item>1</item>-->
+        <!--<item>1</item>-->
+        <!--<item>1</item>-->
+        <!--<item>1</item>-->
+        <!--<item>1</item>-->
+        <!--<item>1</item>-->
+        <!--<item>1</item>-->
+        <!--<item>1</item>-->
+        <!--<item>1</item>-->
+        <!--<item>1</item>-->
+    <!--</string-array>-->
     <!--<string-array name="busTypeIn">
         <item>服务收入</item>
         <item>饭店收入</item>

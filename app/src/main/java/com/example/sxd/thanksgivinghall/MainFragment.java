@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.example.sxd.thanksgivinghall.CustomerOrder.CustomerOrderFragment;
 import com.example.sxd.thanksgivinghall.my.MineFragment;
 import com.example.sxd.thanksgivinghall.adapter.FragAdapter;
+import com.example.sxd.thanksgivinghall.mybill.MineBillFragment;
 import com.example.sxd.thanksgivinghall.notice.NoticeFragment;
 import com.example.sxd.thanksgivinghall.notice.ToDoNoticeActivity;
 import com.example.sxd.thanksgivinghall.customer.CustomerActivity;
@@ -55,7 +56,7 @@ public class MainFragment extends FragmentActivity{
 
     private Context context;
     private BottomBar bottomBar;
-    private BottomBarTab nearby2,nearby3,nearby4,nearby5;
+    private BottomBarTab nearby2,nearby3,nearby4,nearby5,nearby6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,6 +107,7 @@ public class MainFragment extends FragmentActivity{
         nearby3 = bottomBar.getTabWithId(R.id.tab3);
         nearby3 = bottomBar.getTabWithId(R.id.tab4);
         nearby4 = bottomBar.getTabWithId(R.id.tab5);
+        nearby5=bottomBar.getTabWithId(R.id.tab6);
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(@IdRes int tabId) {
@@ -124,6 +126,9 @@ public class MainFragment extends FragmentActivity{
                 }
                 if (tabId == R.id.tab5) {
                     mViewPager.setCurrentItem(4);
+                }
+                if (tabId == R.id.tab6) {
+                    mViewPager.setCurrentItem(5);
                 }
             }
         });
@@ -161,6 +166,7 @@ public class MainFragment extends FragmentActivity{
         fragmentList.add(new MineFragment());
         fragmentList.add(new CustomerActivity());
         fragmentList.add(new CustomerOrderFragment());
+        fragmentList.add(new MineBillFragment());
         fragmentManager = getSupportFragmentManager();
     }
     /**

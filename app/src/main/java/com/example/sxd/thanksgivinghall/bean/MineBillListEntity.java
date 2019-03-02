@@ -7,10 +7,10 @@ import java.util.List;
  * 获取订单信息
  * Created by sxd on 2018/2/2.
  */
-public class CustomerOrderDetailEntity {
+public class MineBillListEntity {
     private String success;
     private String statusMessage;
-    private Data data;
+    public List<Data> data;
     public class Data {
         private String id;
         private String cusname;		// 客户姓名
@@ -20,11 +20,10 @@ public class CustomerOrderDetailEntity {
         private String sumprice;		// 总价
         private String ordertype;		// 支付类型
         private String date;		// 日期
-        private String monthSum;     //月计
-        private String totalSum;    //总计
         private Date beginDate;		// 开始 日期
         private Date endDate;		// 结束 日期
-
+        private String monthSum;    //月计
+        private String dateText;      //界面日期
         public String getId() {
             return id;
         }
@@ -89,22 +88,6 @@ public class CustomerOrderDetailEntity {
             this.date = date;
         }
 
-        public String getMonthSum() {
-            return monthSum;
-        }
-
-        public void setMonthSum(String monthSum) {
-            this.monthSum = monthSum;
-        }
-
-        public String getTotalSum() {
-            return totalSum;
-        }
-
-        public void setTotalSum(String totalSum) {
-            this.totalSum = totalSum;
-        }
-
         public Date getBeginDate() {
             return beginDate;
         }
@@ -119,6 +102,22 @@ public class CustomerOrderDetailEntity {
 
         public void setEndDate(Date endDate) {
             this.endDate = endDate;
+        }
+
+        public String getMonthSum() {
+            return monthSum;
+        }
+
+        public void setMonthSum(String monthSum) {
+            this.monthSum = monthSum;
+        }
+
+        public String getDateText() {
+            return dateText;
+        }
+
+        public void setDateText(String dateText) {
+            this.dateText = dateText;
         }
     }
     public String getSuccess() {
@@ -137,11 +136,11 @@ public class CustomerOrderDetailEntity {
         this.statusMessage = statusMessage;
     }
 
-    public Data getData() {
+    public List<Data> getData() {
         return data;
     }
 
-    public void setData(Data data) {
+    public void setData(List<Data> data) {
         this.data = data;
     }
 

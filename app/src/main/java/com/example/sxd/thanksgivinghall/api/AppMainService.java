@@ -2,6 +2,7 @@ package com.example.sxd.thanksgivinghall.api;
 
 import com.example.sxd.thanksgivinghall.api.service.DeviceService;
 import com.example.sxd.thanksgivinghall.api.service.LoginService;
+import com.example.sxd.thanksgivinghall.api.service.MineBillService;
 import com.example.sxd.thanksgivinghall.api.service.NotifyService;
 import com.example.sxd.thanksgivinghall.api.service.OfficeUserService;
 import com.example.sxd.thanksgivinghall.api.service.CustomerService;
@@ -19,6 +20,7 @@ public class AppMainService
     private static UpLoadService upLoadService;
     private static CustomerService customerService;
     private static CustomerOrderService customerOrderService;
+    private static MineBillService mineBillService;
 
 
 
@@ -56,6 +58,11 @@ public class AppMainService
     {
         customerOrderService = (CustomerOrderService)BaseApi.retrofit(paramString).create(CustomerOrderService.class);
         return customerOrderService;
+    }
+    public static MineBillService getMineBillService(String paramString)
+    {
+        mineBillService = (MineBillService) BaseApi.retrofit(paramString).create(MineBillService.class);
+        return mineBillService;
     }
     public static UpLoadService getUpLoadService(String paramString)
     {

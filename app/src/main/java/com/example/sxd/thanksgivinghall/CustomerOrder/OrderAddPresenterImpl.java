@@ -28,7 +28,7 @@ public class OrderAddPresenterImpl extends BasePresenterImpl implements OrderAdd
     public OrderAddContract.View mView;
     public OrderAddContract.Model mModel;
     public Context context;
-
+    String sum;
     public OrderAddPresenterImpl(Context context, OrderAddContract.View mView) {
         this.mView = mView;
         this.context = context;
@@ -36,7 +36,7 @@ public class OrderAddPresenterImpl extends BasePresenterImpl implements OrderAdd
     }
 
     @Override
-    public void request(String cusname, String goods, String nums, String price, String date, String sendUserId, String receUserIds, String urgentFlag) {
+    public void request(String cusname, String goods, String nums, String price, String date,String OrderType, String sendUserId, String receUserIds, String urgentFlag) {
         if (!StringUtils.notIsBlankAndEmpty(cusname)) {
             this.mView.showMessage(context.getString(R.string.null_cusname));
             return;
@@ -54,10 +54,18 @@ public class OrderAddPresenterImpl extends BasePresenterImpl implements OrderAdd
         params.put("goods",goods);
         params.put("goodsnum",nums);
         params.put("price", price);
-        /*params.put("date", date);*/
-        params.put("sendUserId", sendUserId);
+        params.put("ordertype",OrderType);
+       /* params.put("sumprice",);
+        params.put("orderType",);*/
+        params.put("date", date);
+        Double p=Double.parseDouble(price);
+        Double n=Double.parseDouble(nums);
+        Double sum1=p*n;
+        sum=Double.toString(sum1);
+        params.put("sumprice",sum);
+        /*params.put("sendUserId", sendUserId);
         params.put("receUserIds", receUserIds);
-        params.put("urgentFlag", urgentFlag);
+        params.put("urgentFlag", urgentFlag);*/
 
         JSONObject jsonObj = new JSONObject(params);
 

@@ -67,7 +67,7 @@ public class OrderDetailActivity extends BaseActivity implements OrderDetailCont
         order_nums.setText(value.getData().getGoodsnum());
         order_price.setText(value.getData().getPrice());
         order_sumprice.setText(value.getData().getSumprice());
-        /*order_time.setText(value.getData().getDate());*/
+        order_time.setText(value.getData().getDate());
         String urlBase= String.format("http://%s:%s/", new Object[] { SharedPreUtils.getString(this,"SP_IP"),  SharedPreUtils.getString(this,"SP_PORT") });
 
     }

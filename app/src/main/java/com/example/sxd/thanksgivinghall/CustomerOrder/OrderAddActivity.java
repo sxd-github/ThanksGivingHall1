@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -31,7 +33,7 @@ import butterknife.ButterKnife;
  * Created by 160905 on 2018/2/3.
  */
 
-public class OrderAddActivity extends BaseActivity implements OrderAddContract.View,View.OnTouchListener {
+public class OrderAddActivity extends BaseActivity implements OrderAddContract.View,View.OnTouchListener,AdapterView.OnItemSelectedListener{
 
     @BindView(R.id.logon_bt_logon)
     Button logonBtLogon;
@@ -49,9 +51,15 @@ public class OrderAddActivity extends BaseActivity implements OrderAddContract.V
     EditText et_price;
     @BindView(R.id.add_note_date)
     DatePicker et_date;
+    @BindView(R.id.order_method)
+    Spinner et_method;
+    @BindView(R.id.bt_clear)
+    Button bt_clear;
 
 
-    String cusname,goods,nums,price,date,sendUserId,receUserIds,urgentFlag="0";
+    String OrderType;
+    List<String> data;
+    String cusname,goods,nums,price,method,date,sendUserId,receUserIds,urgentFlag="0";
     String panoramaImgName, linkmanImgName, publicityImgName;
     private OrderAddContract.Presenter mPresenter;
 
@@ -75,11 +83,33 @@ public class OrderAddActivity extends BaseActivity implements OrderAddContract.V
          * 完美解决EditText和ScrollView的滚动冲突
          */
         et_date.setOnTouchListener(OrderAddActivity.this);
-        initDate();
+        /*initDate();*/
+        bt_clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /*Intent intent =new Intent(OrderAddActivity.this,OrderDetailActivity.class);
+                startActivity(intent);*/
+                finish();
+            }
+        });
+        ArrayAdapter adapter;
+        data=new ArrayList<String>();
+        data.add("微信");
+        data.add("支付宝");
+        data.add("其他");
+        //2、未下来列表定义一个数组适配器
+        adapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,data);
+        //3、为适配器设置下拉菜单的样式
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //4、将适配器配置到下拉列表上
+        et_method.setAdapter(adapter);
+        //5、给下拉菜单设置监听事件
+        et_method.setOnItemSelectedListener(this);
+        setDate();
     }
-//
+
     @SuppressLint("NewApi")
-    private void initDate() {
+    private void setDate() {
         date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
         et_date.setOnDateChangedListener(new DatePicker.OnDateChangedListener() {
             @Override
@@ -129,16 +159,26 @@ public class OrderAddActivity extends BaseActivity implements OrderAddContract.V
     }
 
 
+    @SuppressLint("NewApi")
     public void initValue() {
 //        SimpleDateFormat sdf = new SimpleDateFormatmpleDateFormat("yyyyMMddHHmm", Locale.CHINA);
 //        now = sdf.format(new Date());
 
+     /*   date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        et_date.setOnDateChangedListener(new DatePicker.OnDateChangedListener() {
+            @Override
+            public void onDateChanged(DatePicker datePicker, int year, int month, int day) {
+                Date date1 = new Date(year - 1900, month, day);
+                OrderAddActivity.this.date = new SimpleDateFormat("yyyy-MM-dd").format(date1);
+            }
+        });*/
         cusname = et_username.getText().toString();
         goods=et_goodsname.getText().toString();
         nums=et_price.getText().toString();
         price = et_order_goods.getText().toString();
+        /*method=et_method.getText().toString();*/
 //        date = et_date.getText().toString();
-        mPresenter.request(cusname,goods,nums,price,date,sendUserId,receUserIds,urgentFlag);
+        mPresenter.request(cusname,goods,nums,price,date,OrderType,sendUserId,receUserIds,urgentFlag);
     }
 
 
@@ -174,5 +214,15 @@ public class OrderAddActivity extends BaseActivity implements OrderAddContract.V
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
         return false;
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        OrderType=et_method.getItemAtPosition(i).toString();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }

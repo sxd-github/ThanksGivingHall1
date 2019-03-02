@@ -3,6 +3,7 @@ package com.example.sxd.thanksgivinghall.api.service;
 import com.example.sxd.thanksgivinghall.bean.Base;
 import com.example.sxd.thanksgivinghall.bean.CustomerOrderDetailEntity;
 import com.example.sxd.thanksgivinghall.bean.CustomerOrderListEntity;
+import com.example.sxd.thanksgivinghall.bean.MineBillListEntity;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -15,7 +16,7 @@ import retrofit2.http.Query;
  * Created by sxd on 2018/2/2.
  */
 
-public abstract interface CustomerOrderService {
+public abstract interface MineBillService {
 
 /*
     *//**
@@ -23,8 +24,8 @@ public abstract interface CustomerOrderService {
      * @param
      * @return
      */
-    @POST("infc/infcAddOrderCustomer/addOrderCustomer")
-    Call<Base> addOrderCustomer(@Body RequestBody Body);
+//    @POST("infc/infcAddOrderCustomer/addOrderCustomer")
+//    Call<Base> addOrderCustomer(@Body RequestBody Body);
 
 
     /**
@@ -32,24 +33,24 @@ public abstract interface CustomerOrderService {
      * @param userId  当前用户id
      * @return
      */
-    @GET("infc/infcCustomerOrder/customerOrderList")
-    Call<CustomerOrderListEntity> customerOrderList(@Query("userId") String userId);
+//    @GET("infc/infcCustomerOrder/customerOrderList")
+//    Call<CustomerOrderListEntity> customerOrderList(@Query("userId") String userId);
 
     /**
      * 获取订单详情
      * @param customerOrderId  通知通告id
      * @return
      */
-    @GET("infc/infcCustomerOrder/customerOrderDetail")
-    Call<CustomerOrderDetailEntity> customerOrderDetail(@Query("customerOrderId") String customerOrderId);
+//    @GET("infc/infcCustomerOrder/customerOrderDetail")
+//    Call<CustomerOrderDetailEntity> customerOrderDetail(@Query("customerOrderId") String customerOrderId);
 
     /**
      * 获取账单
      * @param customerOrderId
      * @return
      */
-    @GET("infc/infcCustomerOrder/MineBill")
-    Call<CustomerOrderDetailEntity> MineBill(@Query("customerOrderId") String customerOrderId);
+    @GET("infc/infcMineBill/MineBill")
+    Call<MineBillListEntity> MineBill(@Query("customerOrderId") String customerOrderId,@Query("dateTextRe")String dateTextRe);
 
 
     /**
